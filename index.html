@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Register Form Start</title>
+   </head>
+   <style>
+      @import url('httpss://fonts.googleapis.com/css?family=Roboto');
+      body {
+      background-image:url("img.jpeg");
+      }
+      .signup-form {
+      font-family: "Roboto", sans-serif;
+      width:650px;
+      margin:30px auto;
+      background-color:rgba(0,0,0,0.6);
+      border-radius: 10px;
+      }
+      .form-header  {
+      background-color: #EFF0F1;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      }
+      .form-header h1 {
+      font-size: 30px;
+      text-align:center;
+      color:#666;
+      padding:20px 0;
+      border-bottom:1px solid #cccccc;
+      }
+      /*---------------------------------------*/
+      /* Form Body */
+      /*---------------------------------------*/
+      .form-body {
+      padding:10px 40px;
+      color:black;
+      }
+      .form-group{
+      margin-bottom:20px;
+      }
+      .form-body .label-title {
+      color:#1BBA93;
+      font-size: 17px;
+      font-weight: bold;
+      }
+      .form-body .form-input {
+      font-size: 17px;
+      box-sizing: border-box;
+      width: 100%;
+      height: 34px;
+      padding-left: 10px;
+      padding-right: 10px;
+      color: #333333;
+      text-align: left;
+      border: 1px solid #d6d6d6;
+      border-radius: 4px;
+      background: white;
+      outline: none;
+      }
+      .horizontal-group .left{
+      float:left;
+      width:49%;
+      }
+      .horizontal-group .right{
+      float:right;
+      width:49%;
+      }
+      input[type="file"] {
+      outline: none;
+      cursor:pointer;
+      font-size: 17px;
+      }
+      #range-label {
+      width:15%;
+      padding:5px;
+      background-color: #1BBA93;
+      color:white;
+      border-radius: 5px;
+      font-size: 17px;
+      position: relative;
+      top:-8px;
+      }
+      ::-webkit-input-placeholder {
+      color:#d9d9d9;
+      }
+      .form-footer {
+      clear:both
+      }
+      .signup-form .form-footer  {
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      padding:10px 40px;
+      border-top: 1px solid #cccccc;
+      }
+      .btn {
+      display:inline-block;
+      padding:10px 20px;
+      background-color: #1BBA93;
+      font-size:17px;
+      border:none;
+      border-radius:5px;
+      color:#bcf5e7;
+      cursor:pointer;
+      }
+      .btn:hover {
+      background-color: #169c7b;
+      color:white;
+      }
+      .button {
+      background-color: #008CBA; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      }
+   </style>
+   <body>
+      <form class="signup-form" action="form-handler.php" method="post">
+         <div class="form-header">
+            <div class="form-header">
+               <h1>Candidate Form</h1>
+            </div>
+         </div>
+         <div class="form-body">
+            <div class="form-body">
+               <div class="horizontal-group">
+                  <div class="form-group">
+                     <label for="firstname" class="label-title">Full Name *</label>
+                     <input type="text" name="fullname" id="fullname" class="form-input" placeholder="enter your full name" required="required" />
+                  </div>
+               </div>
+               <div class="horizontal-group">
+                  <div class="form-group">
+                     <label class="label-title">Gender:</label>
+                     <div class="input-group">
+                        <label for="male">
+                        <input type="radio" name="gender" value="male" id="male"> Male</label>
+                        <label for="female">
+                        <input type="radio" name="gender" value="female" id="female"> Female</label>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label for="choose-file" class="label-title">Address</label>
+                     <textarea class="form-input" name="address" rows="4" cols="50" style="height:auto"></textarea>
+                  </div>
+                  <div class="form-group">
+                     <label for="email" class="label-title">Email*</label>
+                     <input type="email" id="email" class="form-input" name="emails" placeholder="enter your email" required="required">
+                  </div>
+                  <div class="horizontal-group">
+                     <div class="form-group">
+                        <label class="label-title">Phone No.*</label>
+                        <input type="text" name="PhoneNumber" class="form-input" placeholder="enter phone number" required="required" />
+                     </div>
+                  </div>
+                  <div class="horizontal-group">
+                     <label class="label-title">Education:</label>
+                     <br> 
+                     <table>
+                        <tr>
+                           <td> <label class="label-title">Level</label></td>
+                           <td><label for="firstname" class="label-title">Year</label></td>
+                           <td><label for="firstname" class="label-title">Grade(%)</label></td>
+                        </tr>
+                        <tr>
+                           <td>
+                              <select class="form-input" id="level" >
+                                 <option value="B">B.E/B.TECH</option>
+                                 <option value="I">BCA</option>
+                                 <option value="A">Diploma</option>
+                                 <option value="A">HSC</option>
+                                 <option value="A">SSC</option>
+                              </select>
+                           </td>
+                           <td><input type="text" id="firstname" class="form-input" placeholder="" required="required" /></td>
+                           <td>            <input type="text" id="firstname" class="form-input" placeholder="" required="required" /></td>
+                        </tr>
+                     </table>
+                     <button class=" btn">Remove</button>
+                     <button class="btn">Add Education</button>
+                  </div>
+                  <br>
+                  <div class="horizontal-group">
+                     <label class="label-title">Skills:</label>
+                     <table>
+                        <tr>
+                           <td> <label class="label-title" id="skill">Skillname</label></td>
+                           <td><label for="firstname" class="label-title">Rating</label></td>
+                        </tr>
+                        <tr>
+                           <td><input type="text" id="firstname" class="form-input" placeholder="" required="required" /></td>
+                           <td>
+                              <select class="form-input" id="level" >
+                                 <option value="A">1</option>
+                                 <option value="B">2</option>
+                                 <option value="C">3</option>
+                                 <option value="D">4</option>
+                                 <option value="E">5</option>
+                                 <option value="A">6</option>
+                                 <option value="B">7</option>
+                                 <option value="C">8</option>
+                                 <option value="D">9</option>
+                                 <option value="E">10</option>
+                              </select>
+                           </td>
+                        </tr>
+                     </table>
+                     <button class="btn" onclick="skill">Add Skill</button>
+                  </div>
+                  <br>
+                  <div class="horizontal-group">
+                     <div class="form-group">
+                        <label class="label-title">Hobbies</label><br>
+                        <div>
+                           <label>
+                           <input type="checkbox" value="Web">Music</label>
+                           <label>
+                           <input type="checkbox" value="iOS">Sports</label>
+                           <label>
+                           <input type="checkbox" value="Andriod">Travel</label>
+                           <label>
+                           <input type="checkbox" value="Game">Movies</label>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="horizontal-group">
+                     <div class="form-group" >
+                        <label for="choose-file" class="label-title">Upload Profile Picture</label>
+                        <input type="file" id="choose-file" size="80">
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="form-footer">
+               <button type="submit" class="btn">Submit</button>
+            </div>
+         </div>
+      </form>
+      <script type="text/javascript">
+		function skill()
+		{
+			var div = skill("div");
+			div.id = "duplicater";
+			div.appendChild(skill("duplicater"));
+		}
+
+         function validation(){
+         
+         	var fullname = document.getElementById('fullname').value;
+         	var PhoneNumber = document.getElementById('PhoneNumber').value;
+         	var emails = document.getElementById('emails').value;
+         
+         
+         
+         
+         
+         	if(fullname == ""){
+         		document.getElementById('fullname').innerHTML =" ** Please fill the username field";
+         		return false;
+         	}
+         	if((fullname.length <= 2) || (fullname.length > 20)) {
+         		document.getElementById('fullname').innerHTML =" ** name lenght must be between 2 and 20";
+         		return false;	
+         	}
+         	if(!isNaN(fullname)){
+         		document.getElementById('fullname').innerHTML =" ** only characters are allowed";
+         		return false;
+         	}
+         
+         
+         	if(PhoneNumber == ""){
+         		document.getElementById('mobileno').innerHTML =" ** Please fill the mobile NUmber field";
+         		return false;
+         	}
+         	if(isNaN(PhoneNumber)){
+         		document.getElementById('mobileno').innerHTML =" ** user must write digits only not characters";
+         		return false;
+         	}
+         	if(mobileNumber.length!=10){
+         		document.getElementById('mobileno').innerHTML =" ** Mobile Number must be 10 digits only";
+         		return false;
+         	}
+         
+         
+         
+         	if(emails == ""){
+         		document.getElementById('emailids').innerHTML =" ** Please fill the email idx` field";
+         		return false;
+         	}
+         	if(emails.indexOf('@') <= 0 ){
+         		document.getElementById('emailids').innerHTML =" ** @ Invalid Position";
+         		return false;
+         	}
+         
+         	if((emails.charAt(emails.length-4)!='.') && (emails.charAt(emails.length-3)!='.')){
+         		document.getElementById('emailids').innerHTML =" ** . Invalid Position";
+         		return false;
+         	}
+         }
+         
+      </script>
+   </body>
+</html>
